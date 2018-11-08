@@ -9,7 +9,8 @@ import static org.mockito.Mockito.when;
 
 public class GameShould {
 
-	Game game = new Game();
+	private Dice dice = mock(Dice.class);
+	private Game game = new Game(dice);
 
 	@Test
 	public void placeTokenOnSquareOneWhenGameStarted() {
@@ -18,48 +19,55 @@ public class GameShould {
 
 	@Test
 	public void moveToken() {
+		when(dice.roll()).thenReturn(3);
+
 		game.placeToken();
-		assertThat(game.moveToken(3), is(4));
+		assertThat(game.moveToken(), is(4));
 	}
 
 	@Test
 	public void moveTokenMoreThanOnce() {
+		when(dice.roll()).thenReturn(3).thenReturn(4);
+
 		game.placeToken();
-		game.moveToken(3);
-		assertThat(game.moveToken(4), is(8));
+		game.moveToken();
+		assertThat(game.moveToken(), is(8));
 	}
 
 	@Test
 	public void winTheGame() {
+		when(dice.roll()).thenReturn(96).thenReturn(3);
+
 		game.placeToken();
-		game.moveToken(96);
-		game.moveToken(3);
+		game.moveToken();
+		game.moveToken();
 		assertThat(game.isFinished(), is(true));
 	}
 
 	@Test
 	public void continuePlayingTheGame() {
+		when(dice.roll()).thenReturn(96).thenReturn(4);
+
 		game.placeToken();
-		game.moveToken(96);
-		game.moveToken(4);
+		game.moveToken();
+		game.moveToken();
 		assertThat(game.isFinished(), is(false));
 	}
-	
+
 	@Test
 	public void notMoveWhenSpacesNumberIsGreaterThanRemainingSquares() {
+		when(dice.roll()).thenReturn(96).thenReturn(4);
+
 		game.placeToken();
-		game.moveToken(96);
-		assertThat(game.moveToken(4), is(97));
+		game.moveToken();
+		assertThat(game.moveToken(), is(97));
 	}
 
 	@Test
 	public void moveTokenAfterRollDice() {
-		Dice dice = mock(Dice.class);
 		when(dice.roll()).thenReturn(4);
-		Game gameWithDice = new Game(dice);
 
-		gameWithDice.placeToken();
-
-		assertThat(gameWithDice.moveToken(), is(5));
+		game.placeToken();
+		assertThat(game.moveToken(), is(5));
 	}
 }

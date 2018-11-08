@@ -18,22 +18,22 @@ public class Game {
 		return position;
 	}
 
-	public Integer moveToken(Integer spaces) {
+	public Boolean isFinished() {
+		return position == BOARD_SIZE;
+	}
+
+	public Integer moveToken() {
+		return moveToken(dice.roll());
+	}
+
+	private Integer moveToken(Integer spaces) {
 		if (isThereRoomToMove(spaces)) {
 			this.position += spaces;
 		}
 		return position;
 	}
 
-	public Boolean isFinished() {
-		return position == BOARD_SIZE;
-	}
-
 	private Boolean isThereRoomToMove(Integer spaces) {
 		return (this.position + spaces) <= BOARD_SIZE;
-	}
-
-	public Integer moveToken() {
-		return moveToken(dice.roll());
 	}
 }
