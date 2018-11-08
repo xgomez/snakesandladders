@@ -3,6 +3,7 @@ package com.navico.snakesandladders;
 public class Game {
 
 	public static final int INITIAL_SQUARE = 1;
+	public static final int BOARD_SIZE = 100;
 	private Integer position;
 
 	public Integer placeToken() {
@@ -16,6 +17,6 @@ public class Game {
 	}
 
 	public Boolean isFinished() {
-		return position == 100;
+		return position == BOARD_SIZE;
 	}
 }
