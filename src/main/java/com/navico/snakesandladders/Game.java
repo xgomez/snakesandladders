@@ -12,7 +12,7 @@ public class Game {
 	}
 
 	public Integer moveToken(Integer spaces) {
-		if ((this.position + spaces) <= BOARD_SIZE) {
+		if (isThereRoomToMove(spaces)) {
 			this.position += spaces;
 		}
 		return position;
@@ -20,5 +20,9 @@ public class Game {
 
 	public Boolean isFinished() {
 		return position == BOARD_SIZE;
+	}
+
+	private Boolean isThereRoomToMove(Integer spaces) {
+		return (this.position + spaces) <= BOARD_SIZE;
 	}
 }
