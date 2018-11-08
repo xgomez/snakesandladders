@@ -16,6 +16,6 @@ public class Game {
 	}
 
 	public Boolean isFinished() {
-		throw new UnsupportedOperationException();
+		return true;
 	}
 }
