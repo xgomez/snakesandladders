@@ -7,22 +7,21 @@ import static org.junit.Assert.assertThat;
 
 public class GameShould {
 
+	Game game = new Game();
+
 	@Test
 	public void placeTokenOnSquareOneWhenGameStarted() {
-		Game game = new Game();
 		assertThat(game.placeToken(), is(1));
 	}
 
 	@Test
 	public void moveTokenToSquareFourWhenMovedThreeSpacesGivenTokenAtSquareOne() {
-		Game game = new Game();
 		game.placeToken();
 		assertThat(game.moveToken(3), is(4));
 	}
 
 	@Test
 	public void moveToSquareEightWhenMovedThreeAndFourSpacesGivenTokenAtSquareOne() {
-		Game game = new Game();
 		game.placeToken();
 		game.moveToken(3);
 		assertThat(game.moveToken(4), is(8));
