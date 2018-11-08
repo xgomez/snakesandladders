@@ -26,4 +26,12 @@ public class GameShould {
 		game.moveToken(3);
 		assertThat(game.moveToken(4), is(8));
 	}
+
+	@Test
+	public void winTheGame() {
+		game.placeToken();
+		game.moveToken(96);
+		game.moveToken(3);
+		assertThat(game.isFinished(), is(true));
+	}
 }

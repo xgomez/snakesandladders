@@ -14,4 +14,8 @@ public class Game {
 		position += spaces;
 		return position;
 	}
+
+	public Boolean isFinished() {
+		throw new UnsupportedOperationException();
+	}
 }
