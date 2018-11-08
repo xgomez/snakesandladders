@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class GameShould {
 
 	@Test
-	public void placeTokenOnSquareOneWhenGameStarts() {
+	public void placeTokenOnSquareOneWhenGameStarted() {
 		Game game = new Game();
 		assertThat(game.placeToken(), is(1));
 	}
