@@ -31,14 +31,19 @@ The **Game** class let the player roll a dice to know how many spaces
 will the token be moved on. That **Dice** class is an Interface, so the
 final implementation to be used is injected.
 
+At this point is not necessary to implement separately any other entity
+like **Player**, **Token** or **Board**. The **Game** class is enough to
+keep all the business logic.
+
 ### Assumptions ###
 During the development, and just to implement this first feature, I
 assumed the following assumptions:
 
-* Since the beginning, the **Game** is ready to play, so it's not
-necessary any other procedure to place the token on the board.
-* There is, at this point, only one player.
-* There is, as well, just one token per player.
+* The **Game** is ready to play, so it's not necessary any procedure to
+place the token on the board.
+* There is, at this point, only one **Player** and one **Token** per
+player, with a _one-to-one_ relation between them, so I decided to
+just to focus on **Token** for the moment.
 * The game will finish **only** when the token reach the last square of
 the board. This meaning position 100. Otherwise the game will remain
 open.
