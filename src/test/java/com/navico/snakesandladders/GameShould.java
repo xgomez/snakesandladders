@@ -42,4 +42,11 @@ public class GameShould {
 		game.moveToken(4);
 		assertThat(game.isFinished(), is(false));
 	}
+	
+	@Test
+	public void notMoveWhenSpacesNumberIsGreaterThanRemainingSquares() {
+		game.placeToken();
+		game.moveToken(96);
+		assertThat(game.moveToken(4), is(97));
+	}
 }
