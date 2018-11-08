@@ -15,13 +15,13 @@ public class GameShould {
 	}
 
 	@Test
-	public void moveTokenToSquareFourWhenMovedThreeSpacesGivenTokenAtSquareOne() {
+	public void moveToken() {
 		game.placeToken();
 		assertThat(game.moveToken(3), is(4));
 	}
 
 	@Test
-	public void moveToSquareEightWhenMovedThreeAndFourSpacesGivenTokenAtSquareOne() {
+	public void moveTokenMoreThanOnce() {
 		game.placeToken();
 		game.moveToken(3);
 		assertThat(game.moveToken(4), is(8));
