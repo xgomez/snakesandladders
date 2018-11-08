@@ -7,17 +7,13 @@ public class Game {
 	private Integer position;
 	private Dice dice;
 
-	public Game() {}
+	private Game() {}
 
 	public Game(Dice dice) {
 		this.dice = dice;
-	}
-
-	public Integer placeToken() {
 		position = INITIAL_SQUARE;
-		return position;
 	}
-
+	
 	public Boolean isFinished() {
 		return position == BOARD_SIZE;
 	}
