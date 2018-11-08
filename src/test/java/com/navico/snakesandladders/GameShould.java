@@ -62,12 +62,4 @@ public class GameShould {
 		game.moveToken();
 		assertThat(game.moveToken(), is(97));
 	}
-
-	@Test
-	public void moveTokenAfterRollDice() {
-		when(dice.roll()).thenReturn(4);
-
-		game.placeToken();
-		assertThat(game.moveToken(), is(5));
-	}
 }
