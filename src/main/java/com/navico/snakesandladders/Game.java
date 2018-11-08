@@ -6,6 +6,12 @@ public class Game {
 	public static final int BOARD_SIZE = 100;
 	private Integer position;
 
+	public Game() {}
+
+	public Game(Dice dice) {
+		throw new UnsupportedOperationException();
+	}
+
 	public Integer placeToken() {
 		position = INITIAL_SQUARE;
 		return position;
@@ -24,5 +30,9 @@ public class Game {
 
 	private Boolean isThereRoomToMove(Integer spaces) {
 		return (this.position + spaces) <= BOARD_SIZE;
+	}
+
+	public Integer moveToken() {
+		throw new UnsupportedOperationException();
 	}
 }

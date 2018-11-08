@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class GameShould {
 
@@ -48,5 +50,16 @@ public class GameShould {
 		game.placeToken();
 		game.moveToken(96);
 		assertThat(game.moveToken(4), is(97));
+	}
+
+	@Test
+	public void moveTokenAfterRollDice() {
+		Dice dice = mock(Dice.class);
+		when(dice.roll()).thenReturn(4);
+		Game gameWithDice = new Game(dice);
+
+		gameWithDice.placeToken();
+
+		assertThat(gameWithDice.moveToken(), is(5));
 	}
 }
