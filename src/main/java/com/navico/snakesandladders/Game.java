@@ -3,12 +3,15 @@ package com.navico.snakesandladders;
 public class Game {
 
 	public static final int INITIAL_SQUARE = 1;
+	private Integer position;
 
 	public Integer placeToken() {
-		return INITIAL_SQUARE;
+		position = INITIAL_SQUARE;
+		return position;
 	}
 
 	public Integer moveToken(Integer spaces) {
-		return 4;
+		position += spaces;
+		return position;
 	}
 }
