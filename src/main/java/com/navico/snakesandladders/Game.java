@@ -5,11 +5,12 @@ public class Game {
 	public static final int INITIAL_SQUARE = 1;
 	public static final int BOARD_SIZE = 100;
 	private Integer position;
+	private Dice dice;
 
 	public Game() {}
 
 	public Game(Dice dice) {
-		throw new UnsupportedOperationException();
+		this.dice = dice;
 	}
 
 	public Integer placeToken() {
@@ -33,6 +34,6 @@ public class Game {
 	}
 
 	public Integer moveToken() {
-		throw new UnsupportedOperationException();
+		return moveToken(dice.roll());
 	}
 }
