@@ -12,4 +12,11 @@ public class GameShould {
 		Game game = new Game();
 		assertThat(game.placeToken(), is(1));
 	}
+
+	@Test
+	public void moveTokenToSquareFourWhenMovedThreeSpacesGivenTokenAtSquareOne() {
+		Game game = new Game();
+		game.placeToken();
+		assertThat(game.moveToken(3), is(4));
+	}
 }
