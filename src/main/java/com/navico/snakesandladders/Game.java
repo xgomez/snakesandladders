@@ -12,7 +12,9 @@ public class Game {
 	}
 
 	public Integer moveToken(Integer spaces) {
-		position += spaces;
+		if ((this.position + spaces) <= BOARD_SIZE) {
+			this.position += spaces;
+		}
 		return position;
 	}
 
