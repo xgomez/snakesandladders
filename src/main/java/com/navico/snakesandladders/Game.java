@@ -16,6 +16,6 @@ public class Game {
 	}
 
 	public Boolean isFinished() {
-		return true;
+		return position == 100;
 	}
 }
