@@ -2,8 +2,8 @@ package com.navico.snakesandladders;
 
 public class Game {
 
-	public static final int INITIAL_SQUARE = 1;
-	public static final int BOARD_SIZE = 100;
+	public static final Integer INITIAL_SQUARE = 1;
+	public static final Integer BOARD_SIZE = 100;
 	private Integer position;
 	private Dice dice;
 
