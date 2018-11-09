@@ -26,7 +26,7 @@ public class Game {
 		if (isThereRoomToMove(spaces)) {
 			this.position += spaces;
 		}
-		return position;
+		return this.position;
 	}
 
 	private Boolean isThereRoomToMove(Integer spaces) {
